@@ -336,6 +336,27 @@ button:hover,
   box-shadow: 0 8px 20px rgba(88,101,242,0.35);
 }
 
+/* ===================== BUTTON LINK FIX ===================== */
+
+a.button {
+  display: inline-block;
+  text-decoration: none;
+  color: #ffffff;
+}
+
+a.button:visited {
+  color: #ffffff;
+}
+
+a.button:hover {
+  color: #ffffff;
+}
+
+.button {
+  min-width: 140px;
+  text-align: center;
+}
+
 /* ===================== FOOTER ===================== */
 
 footer {

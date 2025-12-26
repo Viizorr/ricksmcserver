@@ -1,0 +1,26 @@
+[
+  {
+    "id": "economy-balance",
+    "title": "Economy Balance Adjustments",
+    "date": "2025-12-21",
+    "category": "economy",
+    "tags": ["Economy", "Balance"],
+    "items": [
+      "Reduced inflation from mob farms",
+      "Adjusted crate reward probabilities",
+      "Improved shop sell prices"
+    ]
+  },
+  {
+    "id": "qol-performance",
+    "title": "QoL & Performance Improvements",
+    "date": "2025-12-18",
+    "category": "qol",
+    "tags": ["QoL", "Performance"],
+    "items": [
+      "Improved teleport safety checks",
+      "Reduced chunk load spikes",
+      "Fixed GUI desync issues"
+    ]
+  }
+]

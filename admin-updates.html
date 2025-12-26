@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Admin – Create Update</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="styles.css" />
+
+  <style>
+    .admin {
+      max-width: 700px;
+      margin: 80px auto;
+      padding: 32px;
+      background: var(--bg-surface);
+      border-radius: 16px;
+      box-shadow: var(--shadow-card);
+    }
+
+    label {
+      display: block;
+      margin-top: 16px;
+      font-weight: 600;
+    }
+
+    input, textarea, select {
+      width: 100%;
+      margin-top: 6px;
+      padding: 12px;
+      border-radius: 10px;
+      border: 1px solid var(--border-soft);
+      background: var(--bg-surface-2);
+      color: var(--text-main);
+    }
+
+    button {
+      margin-top: 24px;
+      width: 100%;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="admin">
+    <h2>Create Update</h2>
+
+    <label>Title</label>
+    <input id="title" />
+
+    <label>Category</label>
+    <select id="category">
+      <option value="economy">Economy</option>
+      <option value="qol">QoL</option>
+      <option value="performance">Performance</option>
+      <option value="events">Events</option>
+    </select>
+
+    <label>Bullet points (one per line)</label>
+    <textarea id="items" rows="6"></textarea>
+
+    <button onclick="create()">Generate Update JSON</button>
+
+    <pre id="output"></pre>
+  </div>
+
+  <script>
+    function create() {
+      const title = title.value;
+      const category = category.value;
+      const items = document.getElementById("items").value
+        .split("\n").filter(Boolean);
+
+      const id = title.toLowerCase().replace(/[^a-z0-9]+/g, "-");
+      const date = new Date().toISOString().split("T")[0];
+
+      const update = {
+        id, title, date, category,
+        tags: [category.toUpperCase()],
+        items
+      };
+
+      document.getElementById("output").textContent =
+        JSON.stringify(update, null, 2);
+    }
+  </script>
+</body>
+</html>

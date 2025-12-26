@@ -260,8 +260,9 @@ nav {
 .status-box {
   margin-top: 24px;
   display: flex;
-  justify-content: center;
-  gap: 16px;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
   font-size: 0.95rem;
 }
 
@@ -302,10 +303,18 @@ nav {
 /* ===================== SERVER STATUS ALIGNMENT ===================== */
 
 .status-box {
+  margin-top: 24px;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  gap: 12px;
+  gap: 6px;
+  font-size: 0.95rem;
+}
+
+
+.trust-line {
+  font-size: 0.85rem;
+  color: #9aa0a6;
 }
 
 /* ===================== HOW TO JOIN HOVER BOXES ===================== */
@@ -444,6 +453,112 @@ a.button:hover {
 
 #community .discord-button {
   margin: 0 auto;
+}
+
+/* ===================== SERVER UPDATES TIMELINE ===================== */
+
+.update-timeline {
+  position: relative;
+  max-width: 800px;
+  margin: 40px auto;
+  padding-left: 40px; /* Space for the line */
+}
+
+/* The vertical line */
+.timeline-line {
+  position: absolute;
+  left: 10px;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: var(--bg-surface-2);
+  border-left: 2px dashed var(--border-soft);
+}
+
+.update-entry {
+  position: relative;
+  margin-bottom: 40px;
+}
+
+/* The connecting dots (nodes) */
+.update-node {
+  position: absolute;
+  left: -37px;
+  top: 20px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #22c55e; /* Green like your image */
+  border: 3px solid var(--bg-main);
+  z-index: 2;
+}
+
+.update-node.node-recent {
+  background: #ef4444; /* Red for the very latest update */
+  box-shadow: 0 0 10px rgba(239, 68, 68, 0.4);
+}
+
+.update-card {
+  background: var(--bg-surface-2);
+  border-radius: 14px;
+  padding: 24px;
+  box-shadow: var(--shadow-card);
+  border: 1px solid var(--border-soft);
+  transition: transform 0.2s;
+}
+
+.update-card:hover {
+  transform: translateX(5px);
+  border-color: var(--accent);
+}
+
+.update-header h3 {
+  margin: 0;
+  font-size: 1.25rem;
+  color: var(--text-main);
+}
+
+.update-header small {
+  display: block;
+  margin-top: 4px;
+  color: var(--text-muted);
+}
+
+.update-tag {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 4px;
+  margin-bottom: 8px;
+  background: var(--bg-surface);
+  color: var(--accent);
+}
+
+.update-tag.new {
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+
+.update-list {
+  margin: 16px 0 0 0;
+  padding-left: 18px;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+.update-list li {
+  margin-bottom: 8px;
+}
+
+/* Mobile Adjustments */
+@media (max-width: 600px) {
+  .update-timeline {
+    padding-left: 30px;
+  }
+  .update-node {
+    left: -27px;
+  }
 }
 
 /* ===================== FOOTER ===================== */
